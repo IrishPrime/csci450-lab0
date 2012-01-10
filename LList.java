@@ -8,14 +8,17 @@
 public class LList {
 	Node head;
 
+	// Initialize new empty list
 	public LList() {
 		this.head = null;
 	}
 
+	// Add new node to the front of the list
 	void prepend(int key, int val) {
 		this.head = new Node(key, val, this.head);
 	}
 
+	// Iterate over the list using a loop, searching for the node which matches the key argument
 	int search(int key) {
 		for(Node n = this.head; n.next != null; n = n.next) {
 			if(n.key == key) {
@@ -26,6 +29,7 @@ public class LList {
 		return -1;
 	}
 
+	// Recursively iterates over the list, searching for the node which matches the key argument
 	int searchr(int key, Node cur) {
 		if(cur == null) {
 			return -1;
@@ -38,6 +42,7 @@ public class LList {
 		return searchr(key, cur.next);
 	}
 
+	// A simple test
 	public static void main(String[] args) {
 		LList l = new LList();
 		int v1, v2;
